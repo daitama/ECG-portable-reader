@@ -119,7 +119,7 @@ public class PlotController {
         jenisKelamin.setText(gender);
         Umur.setText(umur + " Tahun");
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MMMM yyyy");
-        String TanggalLahir = (birthDate.format(formatter)).toString();
+        String TanggalLahir = (birthDate.format(formatter));
         tanggalLahir.setText(TanggalLahir);
         dataController.setSendPatientData(name, gender, TanggalLahir, umur);
     }
@@ -329,9 +329,6 @@ public class PlotController {
         }
     }
 
-    public void setSerialController(SerialController serialController) {
-        this.serialController = serialController;
-    }
     @FXML
     public void initialize() {
         System.out.println("PlotController intialized");
