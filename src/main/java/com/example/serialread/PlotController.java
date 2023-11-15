@@ -119,7 +119,7 @@ public class PlotController {
         jenisKelamin.setText(gender);
         Umur.setText(umur + " Tahun");
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MMMM yyyy");
-        String TanggalLahir = (birthDate.format(formatter)).toString();
+        String TanggalLahir = (birthDate.format(formatter));
         tanggalLahir.setText(TanggalLahir);
         dataController.setSendPatientData(name, gender, TanggalLahir, umur);
     }

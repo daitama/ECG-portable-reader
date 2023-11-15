@@ -99,7 +99,7 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>com.example.serialread/com.example.serialread.Main</mainClass>
+                            <mainClass>com.example.serialread.Main</mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
                             <jlinkImageName>app</jlinkImageName>
@@ -115,7 +115,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.example.serialread/com.example.serialread.Main</mainClass>
+                            <mainClass>com.example.serialread.Main</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
