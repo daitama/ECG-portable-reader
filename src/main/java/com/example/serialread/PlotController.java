@@ -329,9 +329,6 @@ public class PlotController {
         }
     }
 
-    public void setSerialController(SerialController serialController) {
-        this.serialController = serialController;
-    }
     @FXML
     public void initialize() {
         System.out.println("PlotController intialized");
