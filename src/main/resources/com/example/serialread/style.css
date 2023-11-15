@@ -1,0 +1,26 @@
+#lineChart1 .chart-plot-background{
+    -fx-background-color: transparent;
+}
+#lineChart1 .chart-series-line {
+    -fx-stroke: #323232;
+    -fx-stroke-width: 2px;
+}
+#lineChart2 .chart-plot-background{
+    -fx-background-color: transparent;
+}
+
+/* styles.css */
+.button{
+    -fx-background-color: transparent;
+      -fx-background-radius: 100px;
+      -fx-border-radius: 100px;
+      -fx-border-color: #56c7ec;
+
+}
+
+.button:hover{
+  -fx-background-color:   #56c7ec; /* Replace with the color you want */
+  -fx-background-radius: 100px;
+  -fx-border-radius: 100px;
+  -fx-text-fill: #f7f7f7;
+}

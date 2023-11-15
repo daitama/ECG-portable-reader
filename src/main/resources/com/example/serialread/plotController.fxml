@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane fitToWidth="true" prefHeight="749.0" prefWidth="624.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.serialread.PlotController">
+   <content>
+      <VBox>
+         <children>
+            <ToolBar prefHeight="40.0" prefWidth="610.0" style="-fx-background-color: #56c7ec;">
+              <items>
+                  <FontAwesomeIconView fx:id="backButton" fill="WHITE" glyphName="CHEVRON_CIRCLE_LEFT" onMouseClicked="#handleBackButton" size="25">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </FontAwesomeIconView>
+                  <AnchorPane prefHeight="30.0" prefWidth="481.0">
+                     <children>
+                        <Label layoutX="431.0" layoutY="5.0" text="Export :" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Label>
+                        <Label fx:id="comWarning" layoutX="60.0" layoutY="6.0" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font></Label>
+                        <FontAwesomeIconView fill="WHITE" glyphName="REFRESH" layoutX="398.0" layoutY="23.0" onMouseClicked="#handleClearButtonAction" size="25">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </FontAwesomeIconView>
+                     </children>
+                  </AnchorPane>
+                  <FontAwesomeIconView fill="WHITE" glyphName="IMAGE" onMouseClicked="#handleExportPaneAction" size="25" wrappingWidth="28.057063102722168">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </FontAwesomeIconView>
+                  <AnchorPane prefHeight="30.0" prefWidth="6.0" />
+                  <FontAwesomeIconView fill="WHITE" glyphName="FILE_TEXT_ALT" onMouseClicked="#handleExportCSV" size="25">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </FontAwesomeIconView>
+              </items>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </ToolBar>
+            <fx:include fx:id="serial" source="serialController.fxml" />
+            <VBox fx:id="ecgExport" prefHeight="842.0">
+               <children>
+                  <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="600.0">
+                     <children>
+                        <Label layoutX="42.0" layoutY="2.0" text="Timestamp:" />
+                        <Label layoutX="169.0" layoutY="3.0" text="ECG 1 :" />
+                        <Label layoutX="259.0" layoutY="3.0" text="ECG 2 :" />
+                        <Label fx:id="Data1label" layoutX="216.0" layoutY="4.0" />
+                        <Label fx:id="TimeStamplabel" layoutX="111.0" layoutY="3.0" />
+                        <Label fx:id="Data2label" layoutX="306.0" layoutY="4.0" />
+                        <Label layoutX="42.0" layoutY="30.0" text="Nama Pasien :" />
+                        <Label layoutX="41.0" layoutY="58.0" text="Jenis Kelamin :" />
+                        <Label layoutX="238.0" layoutY="31.0" text="Tanggal Lahir :" />
+                        <Label fx:id="namaPasien" layoutX="128.0" layoutY="31.0" />
+                        <Label fx:id="jenisKelamin" layoutX="127.0" layoutY="58.0" />
+                        <Label fx:id="tanggalLahir" layoutX="321.0" layoutY="31.0" />
+                        <Label layoutX="241.0" layoutY="58.0" text="Umur :" />
+                        <Label fx:id="Umur" layoutX="284.0" layoutY="58.0" />
+                        <Label layoutX="337.0" layoutY="3.0" text="ECG 3 :" />
+                        <Label fx:id="Data3label" layoutX="384.0" layoutY="4.0" />
+                     </children>
+                  </AnchorPane>
+                  <StackPane>
+                     <children>
+                        <Pane fx:id="gridPane2">
+                           <StackPane.margin>
+                              <Insets bottom="37.0" left="50.0" right="12.0" top="38.0" />
+                           </StackPane.margin>
+                        </Pane>
+                        <LineChart id="lineChart1" fx:id="data1LineChart" alternativeColumnFillVisible="true" animated="false" createSymbols="false" horizontalGridLinesVisible="false" horizontalZeroLineVisible="false" legendVisible="false" title="LEAD I" verticalGridLinesVisible="false" verticalZeroLineVisible="false">
+                          <xAxis>
+                            <NumberAxis animated="false" disable="true" fx:id="xAxis1" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis fx:id="yAxis1" animated="false" autoRanging="false" disable="true" lowerBound="3000.0" minorTickCount="10" side="LEFT" upperBound="900.0" />
+                          </yAxis>
+                        </LineChart>
+                     </children>
+                  </StackPane>
+                  <StackPane>
+                     <children>
+                        <Pane fx:id="gridPane1">
+                           <StackPane.margin>
+                              <Insets bottom="37.0" left="50.0" right="12.0" top="38.0" />
+                           </StackPane.margin>
+                        </Pane>
+                        <LineChart id="lineChart1" fx:id="data2LineChart" alternativeColumnFillVisible="true" animated="false" createSymbols="false" horizontalGridLinesVisible="false" horizontalZeroLineVisible="false" legendVisible="false" title="LEAD II" verticalGridLinesVisible="false" verticalZeroLineVisible="false">
+                           <xAxis>
+                              <NumberAxis animated="false" autoRanging="false" disable="true" side="BOTTOM" tickUnit="100.0" fx:id="xAxis2" />
+                           </xAxis>
+                           <yAxis>
+                              <NumberAxis fx:id="yAxis2" animated="false" autoRanging="false" disable="true" lowerBound="2600.0" side="LEFT" upperBound="1700.0" />
+                           </yAxis>
+                        </LineChart>
+                     </children>
+                  </StackPane>
+                  <StackPane layoutX="10.0" layoutY="90.0">
+                     <children>
+                        <Pane fx:id="gridPane3">
+                           <StackPane.margin>
+                              <Insets bottom="37.0" left="50.0" right="12.0" top="38.0" />
+                           </StackPane.margin>
+                        </Pane>
+                        <LineChart id="lineChart1" fx:id="data3LineChart" alternativeColumnFillVisible="true" animated="false" createSymbols="false" horizontalGridLinesVisible="false" horizontalZeroLineVisible="false" legendVisible="false" title="LEAD III" verticalGridLinesVisible="false" verticalZeroLineVisible="false">
+                           <xAxis>
+                              <NumberAxis animated="false" disable="true" fx:id="xAxis3" />
+                           </xAxis>
+                           <yAxis>
+                              <NumberAxis fx:id="yAxis3" animated="false" autoRanging="false" disable="true" lowerBound="3000.0" minorTickCount="10" side="LEFT" upperBound="900.0" />
+                           </yAxis>
+                        </LineChart>
+                     </children>
+                  </StackPane>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </content>
+</ScrollPane>
