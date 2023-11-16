@@ -6,6 +6,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 
@@ -23,6 +24,8 @@ public class Main extends Application {
         Scene scene = new Scene(root);
         MFXThemeManager.addOn(scene, Themes.DEFAULT, Themes.LEGACY);
         scene.getStylesheets().add(getClass().getResource("IndexStyle.css").toExternalForm());
+        Image image = new Image("ecg.png");
+        stage.getIcons().add(image);
         stage.setTitle("ECG Reader");
         stage.setResizable(false);
         stage.setScene(scene);
