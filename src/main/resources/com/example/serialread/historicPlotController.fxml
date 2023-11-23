@@ -1,21 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.Cursor?>
-<?import javafx.scene.chart.LineChart?>
-<?import javafx.scene.chart.NumberAxis?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollBar?>
-<?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.ToolBar?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.StackPane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<ScrollPane fitToWidth="true" prefHeight="749.0" prefWidth="624.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.serialread.HistoricPlotController">
+<ScrollPane fitToWidth="true" prefHeight="749.0" prefWidth="624.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.serialread.HistoricPlotController">
    <content>
       <VBox>
          <children>
@@ -105,7 +98,7 @@
                             <NumberAxis animated="false" autoRanging="false" disable="true" tickUnit="100.0" fx:id="xAxis1" />
                           </xAxis>
                           <yAxis>
-                            <NumberAxis fx:id="yAxis1" animated="false" autoRanging="false" disable="true" lowerBound="3400.0" minorTickCount="10" side="LEFT" upperBound="300.0" />
+                            <NumberAxis fx:id="yAxis1" animated="false" autoRanging="false" disable="true" lowerBound="300.0" minorTickCount="10" minorTickLength="1.0" minorTickVisible="false" side="LEFT" tickUnit="1.0" upperBound="3400.0" />
                           </yAxis>
                         </LineChart>
                         <ScrollBar fx:id="dataScrollBar" max="600.0" unitIncrement="500.0" visibleAmount="20.0" StackPane.alignment="TOP_CENTER">
@@ -127,7 +120,7 @@
                               <NumberAxis animated="false" autoRanging="false" disable="true" side="BOTTOM" tickUnit="100.0" fx:id="xAxis2" />
                            </xAxis>
                            <yAxis>
-                              <NumberAxis fx:id="yAxis2" animated="false" autoRanging="false" disable="true" lowerBound="3400.0" side="LEFT" upperBound="300.0" />
+                              <NumberAxis fx:id="yAxis2" animated="false" autoRanging="false" disable="true" lowerBound="300.0" minorTickLength="1.0" side="LEFT" tickUnit="1.0" upperBound="3400.0" />
                            </yAxis>
                         </LineChart>
                      </children>
